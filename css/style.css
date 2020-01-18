@@ -1,13 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Roboto', sans-serif; 
+}
+
 form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+form input, form button {
+    margin: 10px 0;
+}
+
+.btn {
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid rgba(25,133,50,1);
+    background: rgb(75,193,104);
+    background: linear-gradient(180deg, rgba(75,193,104,1) 12%, rgba(25,133,50,1) 100%);
 }
 
 label, input {
@@ -15,8 +37,29 @@ label, input {
 }
 
 .login__wrapper {
-    padding: 20px;
-    margin: 0 auto;
-    width: 30%;
-    border: 1px solid #3f729b;
+    border-radius: 3px;
+    margin: 20% auto 0;
+    width: 300px;
+    border: 1px solid #70befd;
+    overflow: hidden;
+}
+
+.login__header {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #d8e1e9;
+    background: #7cb7e6;
+    background: linear-gradient(180deg, rgb(97, 153, 199) 0%, rgb(47, 80, 114) 100%);
+    padding: 5px;
+    text-align: center;
+}
+
+.password__link {
+    color: blue;
+    font-size: 12px;
+}
+
+.password__link:visited {
+    color: blue;
 }
