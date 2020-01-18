@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+label, input {
+    width: 50%;
+}
+
+.login__wrapper {
+    padding: 20px;
+    margin: 0 auto;
+    width: 30%;
+    border: 1px solid #3f729b;
+}

@@ -4,3 +4,4 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     localStorage.setItem('username', document.getElementById('username').value);
     window.location.replace('feed.html');
 });
+
