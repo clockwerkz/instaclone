@@ -51,7 +51,7 @@ label {
     overflow: hidden;
 }
 
-.login__header {
+.login__header, .feed__title {
     font-family: 'Lobster', cursive;
     font-weight: 400;
     letter-spacing: 2px;
@@ -69,4 +69,37 @@ label {
 
 .password__link:visited {
     color: blue;
+}
+
+
+/** USER FEED **/
+
+nav {
+    background: #7cb7e6;
+    background: linear-gradient(180deg, rgb(97, 153, 199) 0%, rgb(47, 80, 114) 100%);
+}
+
+.navbar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar i {
+    font-size: 20px;
+}
+
+.nav__user-info {
+    display: flex;
+    /* border-left: 1px solid white;
+    border-right: 1px solid white; */
+    padding: 0 5px;
+    height: 100%;
+}
+
+.nav__profile {
+    margin-left: 10px;
 }
