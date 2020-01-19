@@ -113,7 +113,6 @@ nav {
 .wrapper {
     background-color: #e0e1e2;
     width: 50%;
-
     margin: 0 auto;
     border-left: 1px solid #c2c2c2;
     border-right: 1px solid #c2c2c2;
@@ -121,7 +120,9 @@ nav {
 }
 
 .photo-entry {
+    border: 1px solid #aaa;
     background-color:#fff;
+    margin: 50px 0;
 }
 
 .photo-navbar {
@@ -142,13 +143,23 @@ nav {
     color: #999;
     padding: 0 10px;
 }
-
+.comments {
+    margin: 10px 0;
+}
 .comment {
-    padding: 10px 40px;
+    padding: 5px 10px;
     font-size: 12px;
 }
 
 .author {
     color: #326eaa;
     font-weight: bolder;
+}
+.comment-form {
+    margin: 0;
+    padding: 0 5px;
+}
+.comment-input {
+    width: 100%;
+    margin: 0 0 2px;
 }
