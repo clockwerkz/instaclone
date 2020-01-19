@@ -92,22 +92,40 @@ nav {
     align-items: center;
     width: 80%;
     margin: 0 auto;
+    height: 40px;
 }
 
 .navbar i {
     font-size: 20px;
+    border-left: 1px solid rgb(255, 255, 255, 0.4);
+    border-right: 1px solid rgb(255, 255, 255, 0.4);
+    box-shadow: 1px 0px 0px 0px rgba(73, 73, 73, 0.5),
+                -1px 0px 0px 0px rgba(73, 73, 73, 0.5);
+    padding: 0 15px;
+    height: 100%;
+    line-height: 40px;
 }
 
 .nav__user-info {
     display: flex;
-    /* border-left: 1px solid white;
-    border-right: 1px solid white; */
-    padding: 0 5px;
+    align-items: center;;
+    border-left: 1px solid rgb(255, 255, 255, 0.4);
+    border-right: 1px solid rgb(255, 255, 255, 0.4);
+    box-shadow: 1px 0px 0px 0px rgba(73, 73, 73, 0.5),
+                -1px 0px 0px 0px rgba(73, 73, 73, 0.5);
+    padding: 0 15px;
     height: 100%;
 }
 
 .nav__profile {
     margin-left: 10px;
+}
+.nav__profile-img {
+    width: 30px;
+    height: 30px;
+}
+.feed {
+    background-color: #b4b4b4;
 }
 
 .wrapper {
@@ -123,6 +141,8 @@ nav {
     border: 1px solid #aaa;
     background-color:#fff;
     margin: 50px 0;
+    box-shadow: 1px 0px 8px 0px rgba(87, 87, 87, 0.35),
+                -1px 0px 8px 0px rgba(87, 87, 87, 0.35);
 }
 
 .photo-navbar {
@@ -162,4 +182,18 @@ nav {
 .comment-input {
     width: 100%;
     margin: 0 0 2px;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        width: 100%;
+    }
 }

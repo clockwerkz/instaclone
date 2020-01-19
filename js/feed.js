@@ -1,6 +1,3 @@
-const username = localStorage.getItem('instaclone');
-
-
  function processFormSubmit(e){
     e.preventDefault();
     const form = e.target;
@@ -26,21 +23,16 @@ function getPhotos() {
     });
 }
 
-async function processPhotoArray(arr) {
+
+function processPhotoArray(arr) {
     const wrapper = document.querySelector('.wrapper');
     wrapper.innerHTML = '';
+    let filteredPhotos = 
     arr.forEach(function(url){
-        let likeCount = Math.floor(Math.random()*20);
-        wrapper.innerHTML += createPhotoEntry(url, likeCount);
-    });
-    await document.querySelectorAll('.photo-entry').forEach(function(entry){
-        entry.addEventListener('dblclick', function(){
-            let photoLikes = entry.querySelector('.photo-likes__count');
-            currentLikes = parseInt(photoLikes.textContent);
-            photoLikes.textContent = currentLikes + 1;
-        });
-        let form = entry.querySelector('form');
-        form.addEventListener('submit', processFormSubmit);
+        if (url.includes('https')) {
+            let likeCount = Math.floor(Math.random()*20);
+            wrapper.innerHTML += createPhotoEntry(url, likeCount);
+        }
     });
 };
 
@@ -48,7 +40,7 @@ async function processPhotoArray(arr) {
 function createPhotoEntry(src, likes) { 
     return `
         <div class="photo-entry">
-        <img src='${src}' onerror="this.onerror=null;this.src='https://via.placeholder.com/400';"/>
+        <img src='${src}'/>
         <div class="photo-navbar">
             <i class="far fa-heart"></i>
             <p class="photo-likes"><span class="photo-likes__count">${likes}</span> likes</p>
@@ -62,6 +54,30 @@ function createPhotoEntry(src, likes) {
     `;
 }
 
+function processLike(e) {
+    if (e.target.nodeName === 'IMG' || e.target.classList.contains('fa-heart')) {
+        const entry =  e.target.classList.contains('fa-heart') ? e.target.parentNode.parentNode :e.target.parentNode;
+        let photoLikes = entry.querySelector('.photo-likes__count');
+        currentLikes = parseInt(photoLikes.textContent);
+        if (entry.querySelector('i').classList.contains('far')) {
+            photoLikes.textContent = currentLikes + 1;
+            toggleLikeBtn(entry);
+        } else {
+            photoLikes.textContent = currentLikes - 1;
+            toggleLikeBtn(entry);
+        }
+    } 
+}
+
+function toggleLikeBtn(entry) {
+    entry.querySelector('i').classList.toggle('far');
+    entry.querySelector('i').classList.toggle('fas');
+}
+
 document.addEventListener('DOMContentLoaded', ()=> {
+    const username = localStorage.getItem('instaclone');
+    document.querySelector('.nav__profile').textContent = username;
+    document.querySelector('.wrapper').addEventListener('dblclick', processLike);
+    document.querySelector('.wrapper').addEventListener('submit', processFormSubmit);
     getPhotos();
 });
