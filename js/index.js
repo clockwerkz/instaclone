@@ -22,6 +22,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
         return;
     }
     localStorage.setItem('instaclone', username);
+    //If the username and password are correct, we want to load the feed.html file
     window.location.assign('feed.html');
 });
 

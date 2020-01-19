@@ -6,6 +6,12 @@
     padding: 0;
 }
 
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 body {
     font-family: 'Roboto', sans-serif; 
 }
@@ -102,4 +108,47 @@ nav {
 
 .nav__profile {
     margin-left: 10px;
+}
+
+.wrapper {
+    background-color: #e0e1e2;
+    width: 50%;
+
+    margin: 0 auto;
+    border-left: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+    padding: 25px;
+}
+
+.photo-entry {
+    background-color:#fff;
+}
+
+.photo-navbar {
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.photo-likes {
+    padding: 5px;
+    flex: 1;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.photo-navbar i {
+    color: #999;
+    padding: 0 10px;
+}
+
+.comment {
+    padding: 10px 40px;
+    font-size: 12px;
+}
+
+.author {
+    color: #326eaa;
+    font-weight: bolder;
 }
